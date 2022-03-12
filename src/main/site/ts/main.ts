@@ -1,17 +1,17 @@
 // TODO: select the list element where the suggestions should go, and all three dropdown elements
 //  HINT: look at the HTML
 
-const suggestions = document.querySelector('#suggestions') as HTMLInputElement;
-const moon = document.querySelector('#moon') as HTMLInputElement;
-const sun = document.querySelector('#sun') as HTMLInputElement;
-const  rising = document.querySelector('#rising') as HTMLInputElement;
+const suggestion: HTMLUListElement = document.querySelector('#suggestions') as HTMLUListElement
+const moon = document.querySelector('#moon') as HTMLInputElement
+const sun = document.querySelector('#sun') as HTMLInputElement
+const  rising = document.querySelector('#rising') as HTMLInputElement
 
 
 // Here, when the value of sun is changed, we will call the method postAndUpdate.
 // TODO: Do the same for moon and rising
-moon.addEventListener("change", postAndUpdate);
-sun.addEventListener("change", postAndUpdate);
-rising.addEventListener("change", postAndUpdate);
+moon.addEventListener("change", postAndUpdate)
+sun.addEventListener("change", postAndUpdate)
+rising.addEventListener("change", postAndUpdate)
 
 // TODO: Define a type for the request data object here.
 // type MatchesRequestData = {}
@@ -24,7 +24,7 @@ type MatchesRequestData ={ moon: string; rising: string; sun: string}
 function postAndUpdate(): void {
   // TODO: empty the suggestionList (you want new suggestions each time someone types something new)
   //  HINT: use .innerHTML
-  suggestions.innerHTML = "";
+  suggestions.innerHTML = ""
 
   // TODO: add a type annotation to make this of type MatchesRequestData
   const parameters: MatchesRequestData = {
@@ -82,7 +82,7 @@ function updateSuggestions(matches: string[]): void {
   //  This makes each element selectable via screen reader.
 
   for (let m in matches) {
-    suggestions.innerHTML += `<li tabindex="0">${m}</li>`;
+    suggestions.innerHTML += `<li tabindex="0">${m}</li>`
   }
 }
 
